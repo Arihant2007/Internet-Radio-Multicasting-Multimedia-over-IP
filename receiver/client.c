@@ -70,7 +70,7 @@ static void tune_to(struct button_data *bd)
 	while(gtk_events_pending())
 		gtk_main_iteration();
 
-	system("gcc `pkg-config --cflags gtk+-3.0` -o receiver receiver.c -pthread `pkg-config --libs gtk+-3.0` ");
+	system("gcc -Wno-deprecated-declarations `pkg-config --cflags gtk+-3.0` -o receiver receiver.c -pthread `pkg-config --libs gtk+-3.0` ");
 	snprintf(cmd, sizeof(cmd), "./receiver %s", bd->address);
 	system(cmd);
 }
