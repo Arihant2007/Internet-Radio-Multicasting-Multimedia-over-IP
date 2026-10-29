@@ -40,7 +40,7 @@ struct station_info
 struct button_data
 {
 	GtkLabel *label;
-	char address[INET_ADDRSTRLEN];
+	char address[32];	/* same size as station_info.multicast_address */
 	int number;
 };
 
